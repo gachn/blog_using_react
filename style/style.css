@@ -1,0 +1,18 @@
+.header-title{
+    padding-left: 50px;
+    color: white; !important;
+    solid-opacity: 57%; !important;
+    line-height: 3em;
+
+}
+.header-bg{
+    background-color: #9c27b0;
+}
+.notification{
+    background-color: #6a0080;
+    min-height: 1em;
+    width: 100%;
+}
+form a{
+    margin-left: 10px;
+}
