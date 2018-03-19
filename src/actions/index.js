@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchData='FetchWeather',typePost='createPost',typeFetchPostById='typeFetchPostById';
-const urlRoot = 'http://reduxblog.herokuapp.com/api';
+const urlRoot = 'https://gachnblog.herokuapp.com/api';
 const key = '?key=gachn';
 
 export function fetchPosts(){
