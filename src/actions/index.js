@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 export const fetchData='FetchWeather',typePost='createPost',typeFetchPostById='typeFetchPostById';
-const urlRoot = 'https://gachnblog.herokuapp.com/api';
-const key = '?key=gachn';
+const urlRoot = 'http://gachnblog.herokuapp.com/api';
+
 
 export function fetchPosts(){
-    const request = axios.get(`${urlRoot}/posts${key}`);
+    console.log(`${urlRoot}/posts` , " GET");
+    const request = axios.get(`${urlRoot}/posts`);
         return{
           type: fetchData,
           payload: request
@@ -13,7 +14,9 @@ export function fetchPosts(){
 }
 
 export function createNewPost(blogData,callback) {
-    const request = axios.post(`${urlRoot}/posts${key}`,blogData).then(callback);
+
+    console.log(`${urlRoot}/posts` , " POST");
+    const request = axios.post(`${urlRoot}/posts`,blogData).then(callback);
     return{
         type:typePost,
         payload:request
@@ -21,7 +24,7 @@ export function createNewPost(blogData,callback) {
 }
 
 export function fetchPostById(id) {
-    const request = axios.get(`${urlRoot}/posts/${id}/${key}`);
+    const request = axios.get(`${urlRoot}/posts/${id}`);
     return{
         type:typeFetchPostById,
         payload:request

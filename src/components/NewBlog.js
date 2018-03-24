@@ -21,8 +21,24 @@ import {createNewPost} from '../actions'
                 />
                 <div className="text-help">{touched ? error : ''}</div>
             </div>
+        );
+     }
+     renderTextArea(field){
 
-        )
+         const {meta:{touched,error}} = field;
+         const className=`form-group ${touched && error ? 'has-danger':' ' }`
+         return(
+             <div className={className}>
+                 <label>{field.label}</label>
+                 <textarea rows="8" cols="50"
+                        className="form-control"
+                        {...field.input}
+                 >
+
+                 </textarea>
+                 <div className="text-help">{touched ? error : ''}</div>
+             </div>
+         );
      }
 
    onSubmit(values){
@@ -48,9 +64,9 @@ import {createNewPost} from '../actions'
                 <Field
                     label="Content"
                     name="content"
-                    component={this.renderField}
+                    component={this.renderTextArea}
                 />
-                <button className="btn btn-primary" type="submit">Post It</button>
+                <button className="btn btn-dark" type="submit">Post It</button>
                 <Link to="/" className="btn btn-danger" >Cancel</Link>
             </form>
         );

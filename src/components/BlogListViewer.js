@@ -28,10 +28,13 @@ class BlogListViewer extends Component{
        );
     };
     render(){
+
         var renderHTML=(
             <div>
-                <div className="text-xs-right">
-                    <Link className="btn btn-primary" to="/post/New">New Post</Link>
+                <div className="fixed-at-right" data-toggle="tooltip" title="Create a new Post">
+                    <Link  to="/post/New" style={{"color":"#343a40 !important"}}>
+                        <i className="material-icons Dark" style={{"font-size":"100px"}}>add_circle</i>
+                    </Link>
                     <br/>
                 </div>
                 <ul className="list-group">

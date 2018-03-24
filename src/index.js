@@ -11,6 +11,9 @@ import BlogDisplay from './components/BlogDisplay';
 import Header from "./components/Header";
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+ReactDOM.render(
+    <Header />
+    , document.getElementById('blog-header'));
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
